@@ -54,3 +54,8 @@ Issues and pull requests are welcome. Please report bugs, suggest features, and 
 ## License
 
 MIT — see [LICENSE](LICENSE).
+
+
+## Experimental pedestrian route planner
+
+A beta route planner lets visitors select start and destination points on the map and requests a pedestrian route from the public Valhalla demo service using OpenStreetMap data. The route is a pedestrian suggestion only; it is **not certified as wheelchair-accessible**. Stair, sidewalk, curb, ramp, surface and temporary-obstacle data may be incomplete or absent. Users must verify conditions on site. The routing service is external and may be unavailable or rate-limited. Country selection centers the map on a country where a preset exists; it does not provide a complete, independently curated national accessibility database. The current interface's fully authored translations remain Arabic, French, English, Spanish, German and Tamazight; other languages are not yet fully translated.
