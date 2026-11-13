@@ -2,18 +2,18 @@
 
 **A community-powered accessibility map.** Help people discover places and report obstacles that affect mobility.
 
-AmanMap is a lightweight, six-language (Arabic, French, English, Spanish, German and Tamazight in Tifinagh) progressive-friendly web app built with vanilla JavaScript, Leaflet and OpenStreetMap.
+AmanMap is a lightweight, country-aware web app built with vanilla JavaScript, Leaflet and OpenStreetMap. The current interface offers six languages: Arabic, French, English, Spanish, German and Tamazight (Tifinagh); it is not yet translated into every language in the world.
 
 ## Features
 
-- Interactive OpenStreetMap centered on Agadir, Morocco (change the map location anytime).
-- Add accessible places, limited-access places, obstacles and adapted toilets.
+- Country selection before entering the map, with a suggested language and a country-change control inside the app. Country selection recenters the map for a curated set of countries; other countries open at a world view.
+- Add places, parking, accessible parking, roads and paths, sidewalks, crossings, ramps, elevators, public transport, medical services, entrances, public facilities, barriers, tactile paving, shelters, benches and adapted toilets.
 - Record accessibility details and notes.
 - Search and filter contributions; view summary counts.
 - Use device geolocation and click the map to select coordinates.
 - Import/export contributions as JSON.
 - Arabic RTL plus French, English, Spanish, German and Tamazight (Tifinagh) interfaces.
-- Load nearby public places from OpenStreetMap around the current map center (up to 120 results per request).
+- Load nearby public places and mapped pedestrian infrastructure from OpenStreetMap around the current map center (up to 120 results per request).
 - Accessibility status is inferred only from explicit OpenStreetMap `wheelchair` tags; otherwise it remains unknown.
 - Responsive layout and local-first storage.
 - Remember the selected interface language on the current device.
@@ -30,6 +30,12 @@ No build step is required. Open `index.html` in a browser, or serve the folder w
 2. Under **Build and deployment → Source**, select **GitHub Actions**.
 3. Push changes to `main` or run the deployment workflow manually.
 4. Open `https://zakaria027-tech.github.io/amanmap/` after the workflow succeeds.
+
+## Current limitations
+
+- The map displays nearby road/path and pedestrian-infrastructure features as mapped records; it does not yet calculate turn-by-turn accessible pedestrian routes or verify curb cuts, surface quality, slope, width, crossing signals, or temporary closures.
+- Country selection changes the starting region for a curated set of countries and suggests a language. It does not yet load country-specific laws, services, or authoritative accessibility datasets.
+- Six interface languages are available today. Comprehensive support for every world language requires additional reviewed translations.
 
 ## Important data and privacy note
 
