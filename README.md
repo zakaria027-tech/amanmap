@@ -16,6 +16,9 @@ AmanMap is a lightweight, six-language (Arabic, French, English, Spanish, German
 - Load nearby public places from OpenStreetMap around the current map center (up to 120 results per request).
 - Accessibility status is inferred only from explicit OpenStreetMap `wheelchair` tags; otherwise it remains unknown.
 - Responsive layout and local-first storage.
+- Remember the selected interface language on the current device.
+- Validate imported JSON files (size, record count, field types and coordinates), support generic places with unknown accessibility, and skip duplicate IDs.
+- Limit Overpass requests to one per minute per browser, use POST requests, and stop requests after a 30-second timeout.
 
 ## Run locally
 
@@ -30,7 +33,7 @@ No build step is required. Open `index.html` in a browser, or serve the folder w
 
 ## Important data and privacy note
 
-This release stores contributions in the visitor's browser using localStorage. Data is **not** uploaded to a server and is **not automatically shared** between visitors. Use JSON export/import to exchange contributions manually. The service worker caches the application shell for repeat/offline opening; map tiles and OpenStreetMap place discovery require an internet connection. Nearby place discovery queries the public Overpass API and adds results to the visitor's local list. Please respect OpenStreetMap/Overpass usage policies and avoid repeated rapid requests. Do not enter personal or sensitive information. Geolocation is requested only after the visitor presses the location button.
+This release stores contributions in the visitor's browser using localStorage. Data is **not** uploaded to a server and is **not automatically shared** between visitors. Use JSON export/import to exchange contributions manually. The service worker caches the application shell for repeat/offline opening; map tiles and OpenStreetMap place discovery require an internet connection. Nearby place discovery queries the public Overpass API and adds results to the visitor's local list. The interface enforces a one-minute per-browser cooldown and a 30-second request timeout, but this is not a substitute for the provider's usage policies. Please respect OpenStreetMap/Overpass usage policies and avoid repeated rapid requests. Do not enter personal or sensitive information. Geolocation is requested only after the visitor presses the location button.
 
 Map tiles and map data are provided by OpenStreetMap. See https://www.openstreetmap.org/copyright. Leaflet is loaded from unpkg CDN. An internet connection is required for the map and its tiles.
 
