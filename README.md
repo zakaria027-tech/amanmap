@@ -30,9 +30,9 @@ A workflow in `.github/workflows/pages.yml` also provides a GitHub Actions Pages
 
 ## Important data and privacy note
 
-This first release stores contributions in the visitor's browser using localStorage. Data is **not** uploaded to a server and is **not automatically shared** between visitors. Use JSON export/import to exchange contributions manually. Do not enter personal or sensitive information. Geolocation is requested only after the visitor presses the location button.
+This release stores contributions in the visitor's browser using localStorage. Data is **not** uploaded to a server and is **not automatically shared** between visitors. Use JSON export/import to exchange contributions manually. The service worker caches the application shell for repeat/offline opening; map tiles and live map data still require an internet connection. Do not enter personal or sensitive information. Geolocation is requested only after the visitor presses the location button.
 
-Map tiles and map data are provided by OpenStreetMap. See https://www.openstreetmap.org/copyright. Leaflet is loaded from unpkg CDN. An internet connection is required for the map.
+Map tiles and map data are provided by OpenStreetMap. See https://www.openstreetmap.org/copyright. Leaflet is loaded from unpkg CDN. An internet connection is required for the map and its tiles.
 
 ## Data quality and safety
 
