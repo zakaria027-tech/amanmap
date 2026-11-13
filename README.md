@@ -2,7 +2,7 @@
 
 **A community-powered accessibility map.** Help people discover places and report obstacles that affect mobility.
 
-AmanMap is a lightweight, bilingual (Arabic/French) progressive-friendly web app built with vanilla JavaScript, Leaflet and OpenStreetMap.
+AmanMap is a lightweight, six-language (Arabic, French, English, Spanish, German and Tamazight in Tifinagh) progressive-friendly web app built with vanilla JavaScript, Leaflet and OpenStreetMap.
 
 ## Features
 
@@ -12,7 +12,9 @@ AmanMap is a lightweight, bilingual (Arabic/French) progressive-friendly web app
 - Search and filter contributions; view summary counts.
 - Use device geolocation and click the map to select coordinates.
 - Import/export contributions as JSON.
-- Arabic RTL and French LTR interface.
+- Arabic RTL plus French, English, Spanish, German and Tamazight (Tifinagh) interfaces.
+- Load nearby public places from OpenStreetMap around the current map center (up to 120 results per request).
+- Accessibility status is inferred only from explicit OpenStreetMap `wheelchair` tags; otherwise it remains unknown.
 - Responsive layout and local-first storage.
 
 ## Run locally
@@ -22,15 +24,13 @@ No build step is required. Open `index.html` in a browser, or serve the folder w
 ## Deploy with GitHub Pages
 
 1. Open **Settings → Pages** in this repository.
-2. Under **Build and deployment**, choose **Deploy from a branch**.
-3. Select **main** and **/ (root)**, then Save.
-4. Wait for the deployment and open the URL shown by GitHub Pages.
-
-A workflow in `.github/workflows/pages.yml` also provides a GitHub Actions Pages deployment path; select **GitHub Actions** as the Pages source if using it.
+2. Under **Build and deployment → Source**, select **GitHub Actions**.
+3. Push changes to `main` or run the deployment workflow manually.
+4. Open `https://zakaria027-tech.github.io/amanmap/` after the workflow succeeds.
 
 ## Important data and privacy note
 
-This release stores contributions in the visitor's browser using localStorage. Data is **not** uploaded to a server and is **not automatically shared** between visitors. Use JSON export/import to exchange contributions manually. The service worker caches the application shell for repeat/offline opening; map tiles and live map data still require an internet connection. Do not enter personal or sensitive information. Geolocation is requested only after the visitor presses the location button.
+This release stores contributions in the visitor's browser using localStorage. Data is **not** uploaded to a server and is **not automatically shared** between visitors. Use JSON export/import to exchange contributions manually. The service worker caches the application shell for repeat/offline opening; map tiles and OpenStreetMap place discovery require an internet connection. Nearby place discovery queries the public Overpass API and adds results to the visitor's local list. Please respect OpenStreetMap/Overpass usage policies and avoid repeated rapid requests. Do not enter personal or sensitive information. Geolocation is requested only after the visitor presses the location button.
 
 Map tiles and map data are provided by OpenStreetMap. See https://www.openstreetmap.org/copyright. Leaflet is loaded from unpkg CDN. An internet connection is required for the map and its tiles.
 
